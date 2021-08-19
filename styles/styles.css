@@ -27,12 +27,19 @@ body {
     background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%)) no-repeat;
     height: 100vh;
     font-family: 'Barlow Semi Condensed', sans-serif;   
-    padding: 2em 0;
 }
 
 .width {
     width: 85%;
     margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 2em 0;
 }
 
 /* ===== SCORE CONTAINER ===== */
@@ -78,15 +85,13 @@ body {
 
 /* ===== OPTIONS ===== */
 .container-options {
-    background: red;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2em;
+    align-items: center;
+    gap: 3em;
     background: url('../images/bg-triangle.svg') no-repeat center;
     background-size: 70%;
-
 }
 
 .option {
@@ -126,3 +131,4 @@ body {
     z-index: 1;
 }
 
+/* ===== RULES ELEMENT ===== */
