@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <!-- ===== STYLES ===== -->
+  <link rel="stylesheet" href="./styles/styles.css">
 
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+<!-- 
   Score
   Rules
 
@@ -17,21 +19,35 @@
   You Win
   You Lose
 
-  Play Again
+  Play Again -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header class="width">
+    <div>
+      <img src="./images/logo.svg" alt="">
+      <div>
+        <p>SCORE</p>
+        <p>12</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container width">
+      <div class="option"><img src="./images/icon-paper.svg" alt=""></div>
+      <div class="option"><img src="/images/icon-scissors.svg" alt=""></div>
+      <div class="option"><img src="/images/icon-rock.svg" alt=""></div>
+    </div>
+    <div class="rules">
+      RULES
+    </div>
+  </main>
 
 
   
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
