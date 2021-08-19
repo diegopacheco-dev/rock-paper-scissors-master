@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -24,7 +24,7 @@
 }
 
 body {
-    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%)) no-repeat;
+    background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%)) no-repeat;
     height: 100vh;
     font-family: 'Barlow Semi Condensed', sans-serif;   
     padding: 2em 0;
@@ -33,4 +33,43 @@ body {
 .width {
     width: 85%;
     margin: 0 auto;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px var(--header-outline);
+    border-radius: 0.4em;
+    padding: 0.7em;
+}
+
+.logo-wrapper {
+    width: 34%;
+    padding: 0.5em;
+}
+.logo-wrapper img {
+    width: 100%;
+}
+
+.score-wrapper {
+    background: white;
+    display: flex;
+    padding: 0.4em 1.3em;
+    border-radius: 0.2em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score__caption {
+    font-size: 0.7em;
+    color: var(--score-text);
+    letter-spacing: 0.15em;
+}
+
+.score__number {
+    font-size: 2.3em;
+    font-weight: 700;
+    color: var(--dark-text);
 }

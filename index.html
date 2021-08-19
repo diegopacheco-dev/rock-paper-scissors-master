@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <!-- ===== STYLES ===== -->
-  <link rel="stylesheet" href="./styles/styles.css">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- ===== STYLES ===== -->
+    <link rel="stylesheet" href="./styles/styles.css" />
 
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
-<!-- 
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <!-- 
   Score
   Rules
 
@@ -20,34 +26,29 @@
   You Lose
 
   Play Again -->
-
-</head>
-<body>
-  <header class="width">
-    <div>
-      <img src="./images/logo.svg" alt="">
-      <div>
-        <p>SCORE</p>
-        <p>12</p>
+  </head>
+  <body>
+    <header class="score-container width">
+      <div class="logo-wrapper">
+        <img src="./images/logo.svg" alt="" />
       </div>
-    </div>
-  </header>
-  <main>
-    <div class="container width">
-      <div class="option"><img src="./images/icon-paper.svg" alt=""></div>
-      <div class="option"><img src="/images/icon-scissors.svg" alt=""></div>
-      <div class="option"><img src="/images/icon-rock.svg" alt=""></div>
-    </div>
-    <div class="rules">
-      RULES
-    </div>
-  </main>
+      <div class="score-wrapper">
+        <p class="score__caption">SCORE</p>
+        <p class="score__number">12</p>
+      </div>
+    </header>
+    <main>
+      <div class="container width">
+        <div class="option"><img src="./images/icon-paper.svg" alt="" /></div>
+        <div class="option"><img src="/images/icon-scissors.svg" alt="" /></div>
+        <div class="option"><img src="/images/icon-rock.svg" alt="" /></div>
+      </div>
+      <div class="rules">RULES</div>
+    </main>
 
-
-  
-  <!-- <div class="attribution">
+    <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-</body>
+  </body>
 </html>
