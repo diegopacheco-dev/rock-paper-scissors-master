@@ -1,3 +1,20 @@
+let opciones = [
+  {
+    name: "rock",
+    beats: ["scissors"],
+  },
+  {
+    name: "paper",
+    beats: ["rock"],
+  },
+  {
+    name: "scissors",
+    beats: ["paper"],
+  },
+];
+
+let score = 0;
+
 const renderOpciones = (opciones, containerId) => {
   const crearOpcion = (opcion) => {
     let div = document.createElement("div");
@@ -9,26 +26,47 @@ const renderOpciones = (opciones, containerId) => {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
 
-  if (opciones.length === 2) {
-    container.classList.add("bg-none");
-  }
-
+  
   opciones.forEach((opcion) => {
     console.log("renderizando : ", opcion);
     container.appendChild(crearOpcion(opcion.name));
   });
+  
+  if (opciones.length === 2) {
+    container.classList.add("bg-none");
+    document.querySelector('.option').classList.add('animation')
+  }
+  
 };
 
-const renderResultado = (title, containerId) => {
-  const container = document.getElementById(containerId);
-  console.log("container : ", container);
-  const outcome = document.createElement('p');
-  outcome.className = "outcome-title";
-  outcome.innerText = title
-
-  container.appendChild(outcome)
+const renderizadoInicial = () => {
+  renderOpciones(opciones, "containerOptions");
+  asignarPlayEvent(play, opciones);
+renderScore(score, "scoreNumber");
 
 }
+
+const renderOutcome = (title, containerId) => {
+  const container = document.getElementById(containerId);
+  const outcomeContainer = document.createElement('div')
+  outcomeContainer.className = 'outcome-container'
+
+  const outcome = document.createElement('p');
+  outcome.className = "outcome-title";
+  outcome.innerText = title;
+
+  const buttonPlayAgain = document.createElement('button')
+  buttonPlayAgain.className = 'btn-play-again';
+  buttonPlayAgain.innerText = 'PLAY AGAIN';
+  buttonPlayAgain.addEventListener('click', () => renderizadoInicial())
+
+  outcomeContainer.appendChild(outcome)
+  outcomeContainer.appendChild(buttonPlayAgain)
+
+  container.appendChild(outcomeContainer)
+
+}
+
 
 const play = (optionUsuario, opciones) => {
   // Encontrar el obj usuario
@@ -45,9 +83,13 @@ const play = (optionUsuario, opciones) => {
 
   // Mostrar el ganador
     if (objOptionUsuario.beats.includes(objOpcionMaquina.name)) {
-      renderResultado("YOU WIN", 'containerOptions');
+      score++;
+      renderScore(score, "scoreNumber");
+      renderOutcome("YOU WIN", 'containerOptions');
+
     } else {
-      renderResultado("YOU ", 'containerOptions');
+
+      renderOutcome("YOU LOSE", 'containerOptions');
 
     }
     
@@ -55,23 +97,6 @@ const play = (optionUsuario, opciones) => {
 
 };
 
-//  1. MOSTRAR OPCIONES Y PUNTAJE VACIO
-let opciones = [
-  {
-    name: "rock",
-    beats: ["scissors"],
-  },
-  {
-    name: "paper",
-    beats: ["rock"],
-  },
-  {
-    name: "scissors",
-    beats: ["paper"],
-  },
-];
-
-let score = 10;
 
 const renderScore = (score, scoreContainerId) => {
   const container = document.getElementById(scoreContainerId);
@@ -86,9 +111,7 @@ const asignarPlayEvent = (play, opciones) => {
   });
 };
 
-renderScore(score, "scoreNumber");
-renderOpciones(opciones, "containerOptions");
-asignarPlayEvent(play, opciones);
+renderizadoInicial();
 
 //  2. SELECCIONAR OPCION DE JUEGO
 

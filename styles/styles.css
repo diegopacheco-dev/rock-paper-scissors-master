@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
 
 * {
   margin: 0;
@@ -15,165 +15,183 @@
   --header-outline: hsl(217, 16%, 45%);
 
   /* ===== Gradients ===== */
-  --scissors-gradient: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
---paper-gradient: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
---rock-gradient: linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
---lizard-gradient: linear-gradient(to top, hsl(261, 73%, 60%), hsl(261, 72%, 63%));
---cyan: linear-gradient(to top, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
-
+  --scissors-gradient: linear-gradient(
+    to top,
+    hsl(39, 89%, 49%),
+    hsl(40, 84%, 53%)
+  );
+  --paper-gradient: linear-gradient(
+    to top,
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+  --rock-gradient: linear-gradient(
+    to top,
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+  --lizard-gradient: linear-gradient(
+    to top,
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%)
+  );
+  --cyan: linear-gradient(to top, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
 }
 
 body {
-    background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%)) no-repeat;
-    background-size: cover;
-    height: 100vh;
-    font-family: 'Barlow Semi Condensed', sans-serif;   
+  background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%))
+    no-repeat;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 .width {
-    width: 85%;
-    margin: 0 auto;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    min-height: 650px;
-    justify-content: space-between;
-    padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 600px;
+  justify-content: space-between;
+  padding: 2em 0;
 }
 
 /* ===== SCORE CONTAINER ===== */
 .score-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: solid 2px var(--header-outline);
-    border-radius: 0.4em;
-    padding: 0.7em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 2px var(--header-outline);
+  border-radius: 0.4em;
+  padding: 0.7em;
 }
 
 .logo-wrapper {
-    width: 34%;
-    padding: 0.5em;
+  width: 34%;
+  padding: 0.5em;
 }
 .logo-wrapper img {
-    width: 100%;
+  width: 100%;
 }
 
 .score-wrapper {
-    background: white;
-    display: flex;
-    padding: 0.4em 1.3em;
-    border-radius: 0.2em;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background: white;
+  display: flex;
+  padding: 0.4em 1.3em;
+  border-radius: 0.2em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .score__caption {
-    font-size: 0.7em;
-    color: var(--score-text);
-    letter-spacing: 0.13em;
-    font-weight: 700;
+  font-size: 0.7em;
+  color: var(--score-text);
+  letter-spacing: 0.13em;
+  font-weight: 700;
 }
 
 .score__number {
-    font-size: 2.3em;
-    font-weight: 700;
-    color: var(--dark-text);
+  font-size: 2.3em;
+  font-weight: 700;
+  color: var(--dark-text);
 }
 
 /* ===== OPTIONS ===== */
 .container-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 3em;
-    background: url('../images/bg-triangle.svg') no-repeat center;
-    background-size: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  background: url("../images/bg-triangle.svg") no-repeat center;
+  background-size: 70%;
 }
 
 .container-options.bg-none {
-    background: none;
+  background: none;
 }
 
 .option {
-    max-width: 50%;
-    height:8em;
-    width: 8em;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0 -11px 0 -5px rgba(59, 59, 59, 0.295);
+  max-width: 50%;
+  height: 7em;
+  width: 7em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 -11px 0 -5px rgba(59, 59, 59, 0.295);
 }
 
-.option-empty {
-    background: rgba(255, 255, 255, 0.080);
-    height: 6em;
-    width: 6em;
-    border-radius: 50%;
-    /* box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.5); */
-    /* animation: 0.8s infinite animar; */
+.option.animation {
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
 }
 
 .option::after {
-    content: '';
-    background: white;
-    height:6em;
-    width: 6em;
-    border-radius: 50%;
-    position: absolute;
-    box-shadow: inset 0 6px 0 0px rgba(139, 139, 139, 0.199);
+  content: "";
+  background: white;
+  height: 5.5em;
+  width: 5.5em;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: inset 0 6px 0 0px rgba(139, 139, 139, 0.199);
 }
-
 
 .icon-paper {
-    background: var(--paper-gradient);
+  background: var(--paper-gradient);
 }
 .icon-scissors {
-    background: var(--scissors-gradient);
+  background: var(--scissors-gradient);
 }
 .icon-rock {
-    background: var(--rock-gradient);
+  background: var(--rock-gradient);
 }
 
 .option img {
-    z-index: 1;
+  z-index: 1;
 }
 
 /* ===== OUTCOME ===== */
-.outcome {
-    background: red;
-    text-align: center;
+.outcome-container {
+  text-align: center;
 }
 
 .outcome-title {
-    color: white;
-    font-size: 3.5em;
-    font-weight: 600;
+  color: white;
+  font-size: 3.5em;
+  font-weight: 600;
 }
 
 .btn-play-again {
-    width: 14rem;
-
+    margin-top: 0.8em;
+    padding: 1.2em 4.5em;
+    border-radius: 0.5em;
+    border: none;
+    color: var(--dark-text);
+    font-weight: 700;
+    letter-spacing: 0.1em;
 }
-
-
-
 
 /* ===== RULES ELEMENT ===== */
 .rules {
-    align-self: center;
-    color: white;
-    border: solid 2px var(--header-outline);
-    border-radius: 0.6em;
-    letter-spacing: 0.2em;
-    font-size: 0.9em;
-    text-align: center;
-    padding: 0.7em 2.5em;
-    margin-bottom: 1.4em;
+  align-self: center;
+  color: white;
+  border: solid 2px var(--header-outline);
+  border-radius: 0.6em;
+  letter-spacing: 0.2em;
+  font-size: 0.9em;
+  text-align: center;
+  padding: 0.7em 2.5em;
 }
