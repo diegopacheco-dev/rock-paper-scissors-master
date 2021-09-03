@@ -15,6 +15,21 @@ let opciones = [
 
 let score = 0;
 
+const showRules = () => {
+  const container = document.getElementById("rules-container");
+  const buttonRules = document.getElementById('rules-button');
+  const buttonExit = document.getElementById('rulesButtonExit');
+  buttonRules.addEventListener('click', () => {
+    container.classList.add('show');
+  })
+  buttonExit.addEventListener('click', () => {
+    container.classList.remove('show');
+  })
+
+}
+showRules();
+
+
 const renderOpciones = (opciones, containerId) => {
   const crearOpcion = (opcion) => {
     let div = document.createElement("div");
@@ -25,6 +40,7 @@ const renderOpciones = (opciones, containerId) => {
   };
   const container = document.getElementById(containerId);
   container.innerHTML = "";
+  container.classList.remove("bg-none");
 
   
   opciones.forEach((opcion) => {
@@ -88,7 +104,8 @@ const play = (optionUsuario, opciones) => {
       renderOutcome("YOU WIN", 'containerOptions');
 
     } else {
-
+      if (score > 0) score--;
+      renderScore(score, "scoreNumber");
       renderOutcome("YOU LOSE", 'containerOptions');
 
     }
