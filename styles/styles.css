@@ -9,6 +9,9 @@
 :root {
   --max-width: 1366px;
 
+
+  --width-container-options: 22rem;
+
   /* ===== Colors neutral ===== */
   --dark-text: hsl(229, 25%, 31%);
   --score-text: hsl(229, 64%, 46%);
@@ -104,6 +107,7 @@ body {
 
 /* ===== OPTIONS ===== */
 .container-options {
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -111,7 +115,7 @@ body {
   gap: 3em;
   background: url("../images/bg-triangle.svg") no-repeat center;
   background-size: 70%;
-  width: 22rem;
+  width: var(--width-container-options);
 }
 
 .container-options.bg-none {
@@ -119,6 +123,7 @@ body {
 }
 
 .option {
+  cursor: pointer;
   position: relative;
   max-width: 50%;
   height: 7em;
@@ -228,31 +233,38 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  :root {
+    --width-container-options: 27rem;
+  }
+
   .logo-wrapper {
     width: 20%;
   }
 
   .container-options {
-    width: 27rem;
-    gap: calc(27rem * 0.15);
+    width: var(--width-container-options);
+    gap: calc(var(--width-container-options) * 0.15);
   }
 
   .option {
-    height: calc(27rem * 0.35);
-    width: calc(27rem * 0.35);
+    height: calc(var(--width-container-options) * 0.35);
+    width: calc(var(--width-container-options) * 0.35);
   }
 
   .option::after {
-    height: calc(27rem * 0.27);
-    width: calc(27rem * 0.27);
+    height: calc(var(--width-container-options) * 0.27);
+    width: calc(var(--width-container-options) * 0.27);
   }
 }
  
 @media screen and (min-width: 1024px) {
+  :root {
+    --width-container-options: 27rem;
+  }
 
   .container {
     padding: 1em;
-    /* gap: 0.5em; */
+    gap: 0.5em;
   }
 
   .score-container {
@@ -279,21 +291,57 @@ body {
   }
 
   .container-options {
-    /* width: 27rem; */
-    gap: calc(27rem * 0.15);
+    gap: calc(var(--width-container-options) * 0.15);
+  }
+  
+  .container-options.outcome {
+    width: 100%;
   }
 
-  .option {
-    height: calc(27rem * 0.35);
-    width: calc(27rem * 0.35);
+  .outcome .option {
+    transform: scale(1.5);
+    margin: 2rem;
   }
 
-  .option::after {
-    height: calc(27rem * 0.27);
-    width: calc(27rem * 0.27);
+  .outcome .option:nth-child(1) {
+    order: 1;
   }
+  .outcome .option:nth-child(2) {
+    order: 3;
+  }
+
+  .outcome-container {
+    order: 2;
+  }  
+
 
   .rules-button {
     align-self: flex-end;
   }
 } 
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --width-container-options: 40rem;
+  }
+
+  .score-container {
+    max-width: 45rem;
+  }
+
+  .logo-wrapper {
+    width: 26%;
+  }
+  
+  .score-wrapper {
+    padding: 0.8em 3em;
+  }
+  
+  .score__caption {
+    font-size: 1em;
+  }
+  
+  .score__number {
+    font-size: 3em;
+  }
+}

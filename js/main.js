@@ -48,10 +48,13 @@ const renderOpciones = (opciones, containerId) => {
     container.appendChild(crearOpcion(opcion.name));
   });
   
+  container.classList.remove("outcome");
   if (opciones.length === 2) {
     container.classList.add("bg-none");
+    container.classList.add("outcome");
     document.querySelector('.option').classList.add('animation')
   }
+
   
 };
 
