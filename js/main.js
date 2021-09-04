@@ -35,7 +35,8 @@ const renderOpciones = (opciones, containerId) => {
     let div = document.createElement("div");
     div.classList.add("option", `icon-${opcion}`);
     div.setAttribute("name", opcion);
-    div.innerHTML = `<img src="./images/icon-${opcion}.svg" alt="" />`;
+    div.innerHTML = `
+    <img src="./images/icon-${opcion}.svg" alt="" />`;
     return div;
   };
   const container = document.getElementById(containerId);
@@ -44,7 +45,6 @@ const renderOpciones = (opciones, containerId) => {
 
   
   opciones.forEach((opcion) => {
-    console.log("renderizando : ", opcion);
     container.appendChild(crearOpcion(opcion.name));
   });
   
@@ -52,7 +52,13 @@ const renderOpciones = (opciones, containerId) => {
   if (opciones.length === 2) {
     container.classList.add("bg-none");
     container.classList.add("outcome");
-    document.querySelector('.option').classList.add('animation')
+    let options = Array.from(document.querySelectorAll('.option'));
+    options[0].classList.add('animation');
+
+
+
+
+
   }
 
   
