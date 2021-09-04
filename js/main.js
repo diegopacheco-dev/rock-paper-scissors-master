@@ -138,11 +138,3 @@ const asignarPlayEvent = (play, opciones) => {
 };
 
 renderizadoInicial();
-
-//  2. SELECCIONAR OPCION DE JUEGO
-
-//  3. EL BOT SELECCIONA SU OPCION DE JUEGO
-//  4. MOSTRAR LA OPCION SELECCIONADA DEL BOT
-//  5. CALCULAR EL GANADOR
-//  6. MOSTRAR MENSAJE DEL RESULTADO
-//  7.
