@@ -117,7 +117,6 @@ button {
   background: url("../images/bg-triangle.svg") no-repeat center;
   background-size: 70%;
   width: var(--width-container-options);
-  background-color: red;
 }
 
 .container-options.bg-none {
