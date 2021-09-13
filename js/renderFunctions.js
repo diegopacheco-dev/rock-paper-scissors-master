@@ -2,7 +2,8 @@ export const renderOpciones = (opciones, containerId) => {
   const crearOpcion = (opcion) => {
     let div = document.createElement("div");
     div.classList.add("option", `icon-${opcion}`);
-    div.setAttribute("name", opcion);
+    // div.setAttribute("name", opcion);
+    div.id = opcion;
     div.innerHTML = `
       <img src="./images/icon-${opcion}.svg" alt="" />`;
     return div;

@@ -38,7 +38,7 @@ const play = (optionUsuario, opciones, storeScore) => {
 const asignarPlayEvent = (play, opciones) => {
   document.querySelectorAll(".option").forEach((option) => {
     option.addEventListener("click", () =>
-      play(option.getAttribute("name"), opciones, storeScore)
+      play(option.id, opciones, storeScore)
     );
   });
 };
