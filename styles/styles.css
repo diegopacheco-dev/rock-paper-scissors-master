@@ -195,9 +195,6 @@ button {
   width: 150%;
 }
 
-
-
-
 /* ===== OUTCOME ===== */
 .outcome-container {
   text-align: center;
@@ -428,5 +425,9 @@ button {
   
   .score__number {
     font-size: 3em;
+  }
+
+  .option img {
+    transform: scale(1.6);
   }
 }
